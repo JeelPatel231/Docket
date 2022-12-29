@@ -4,8 +4,8 @@
         
         <TextInput label={'Name'} name={'name'} errorText={form?.details.data.data['name']?.message} />
         <TextInput label={'Email'} name={'email'} errorText={form?.details.data.data['email']?.message} />
-        <PasswordInput label={'Password'} name={'password'} errorText={form?.details.data.data['password'].message} />
-        <PasswordInput label={'Confirm Password'} name={'passwordConfirm'} errorText={form?.details.data.data['passwordConfirm'].message} />
+        <PasswordInput label={'Password'} name={'password'} errorText={form?.details.data.data['password']?.message} />
+        <PasswordInput label={'Confirm Password'} name={'passwordConfirm'} errorText={form?.details.data.data['passwordConfirm']?.message} />
         <DateInput label={'Date Of Birth'} name={'dob'} errorText={form?.details.data.data['dob']?.message} />
         
         <span class="error-text body-medium text-center">
