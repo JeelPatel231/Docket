@@ -1,0 +1,201 @@
+[
+    {
+        "id": "_pb_users_auth_",
+        "name": "users",
+        "type": "auth",
+        "system": false,
+        "schema": [
+            {
+                "id": "users_name",
+                "name": "name",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "users_avatar",
+                "name": "avatar",
+                "type": "file",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1,
+                    "maxSize": 5242880,
+                    "mimeTypes": [
+                        "image/jpg",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml",
+                        "image/gif"
+                    ],
+                    "thumbs": null
+                }
+            },
+            {
+                "id": "ygcqar7a",
+                "name": "dob",
+                "type": "date",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "min": "",
+                    "max": ""
+                }
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "id = @request.auth.id",
+        "deleteRule": "id = @request.auth.id",
+        "options": {
+            "allowEmailAuth": true,
+            "allowOAuth2Auth": true,
+            "allowUsernameAuth": true,
+            "exceptEmailDomains": null,
+            "manageRule": null,
+            "minPasswordLength": 8,
+            "onlyEmailDomains": null,
+            "requireEmail": false
+        }
+    },
+    {
+        "id": "9ar2jhp9uu6fw7o",
+        "name": "project",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "id": "ixmsf18c",
+                "name": "name",
+                "type": "text",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "cne23g4i",
+                "name": "description",
+                "type": "text",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "ogoxrgkt",
+                "name": "owner",
+                "type": "relation",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1,
+                    "collectionId": "_pb_users_auth_",
+                    "cascadeDelete": true
+                }
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "@request.auth.id = owner.id",
+        "deleteRule": "@request.auth.id = owner.id",
+        "options": {}
+    },
+    {
+        "id": "as03bijxapzh15m",
+        "name": "tasks",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "id": "9i6ch4br",
+                "name": "name",
+                "type": "text",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "vxhoaqzu",
+                "name": "description",
+                "type": "text",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "sirtpag5",
+                "name": "user",
+                "type": "relation",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1,
+                    "collectionId": "_pb_users_auth_",
+                    "cascadeDelete": true
+                }
+            },
+            {
+                "id": "oc32rn1p",
+                "name": "project",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1,
+                    "collectionId": "9ar2jhp9uu6fw7o",
+                    "cascadeDelete": true
+                }
+            },
+            {
+                "id": "lphjnnk4",
+                "name": "deadline",
+                "type": "date",
+                "system": false,
+                "required": true,
+                "unique": false,
+                "options": {
+                    "min": "",
+                    "max": ""
+                }
+            }
+        ],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "@request.auth.id = user.id",
+        "deleteRule": "@request.auth.id = user.id",
+        "options": {}
+    }
+]
