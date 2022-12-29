@@ -13,8 +13,10 @@
         </span>
         
         <span class="spacer" />
-
+        
         <Button>Register</Button>
+        
+        <span class="spacer" />
 
         <span class="body-small text-center">
             Already have an account?
@@ -43,5 +45,10 @@ export let form:PBError;
 }
 .header{
     margin-bottom: 2rem;
+}
+form{
+    border: 0.125rem solid var(--md-sys-color-outline);
+    padding: 2rem;
+    border-radius: 2rem;
 }
 </style>
