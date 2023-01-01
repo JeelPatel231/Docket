@@ -1,4 +1,4 @@
-HELLO {data.user.email}
+logged in as {data.user.name}
 
 <script lang="ts">
 import type { LayoutData } from "./$types";
